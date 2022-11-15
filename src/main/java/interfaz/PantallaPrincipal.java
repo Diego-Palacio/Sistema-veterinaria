@@ -1,17 +1,10 @@
 package interfaz;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.ImageIcon;
+import java.awt.event.*;
 
 public class PantallaPrincipal extends JFrame {
 
@@ -40,9 +33,11 @@ public class PantallaPrincipal extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			
-			//Evento al apretar boton "Cargar Datos" para dirigirnos a la pantalla de carga de datos.
+			//Evento que al apretar boton "Cargar Datos" nos redirige a la pantalla de carga de datos.
 			public void actionPerformed(ActionEvent e) {
-				
+				PantallaCargaDatos PantallaCargaDatos= new PantallaCargaDatos();
+				PantallaCargaDatos.setVisible(true);
+				PantallaCargaDatos.setLocationRelativeTo(null);
 			}
 			
 		});
