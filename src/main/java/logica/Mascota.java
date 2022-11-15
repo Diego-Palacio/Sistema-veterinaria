@@ -1,6 +1,19 @@
 package logica;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+//Mapeo una clase como entidad para transformar como tabla en bdd 
+@Entity
 public class Mascota {
+	
+	//primary key , se genera de forma automatica
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private String id_cliente;
 	private String nombre_perro;
 	private String raza;
 	private String color;
@@ -8,14 +21,19 @@ public class Mascota {
 	private String atencion_especial;
 	private String observaciones;
 	
+	//anotacion para declarar relacion uno a uno
+	@OneToOne
+	private Dueño unDueño;
 	
-	public Mascota(String nombre_perro, String raza, String color, String alergico, String atencion_especial, String observaciones) {	
+	
+	public Mascota(String nombre_perro, String raza, String color, String alergico, String atencion_especial, String observaciones,Dueño unDueño) {	
 		this.nombre_perro = nombre_perro;
 		this.raza = raza;
 		this.color = color;
 		this.alergico = alergico;
 		this.atencion_especial = atencion_especial;
 		this.observaciones = observaciones;
+		this.unDueño= unDueño;
 	}
 	
 	
