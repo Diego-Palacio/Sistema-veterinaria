@@ -1,11 +1,19 @@
 package logica;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Dueño {
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	private int id_dueño;
 	private String nombre;
 	private int celular_dueño;
 		
-	
 	
 	public Dueño(int id_dueño, String nombre, int celular_dueño) {
 		this.id_dueño = id_dueño;
