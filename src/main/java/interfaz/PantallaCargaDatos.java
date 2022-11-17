@@ -117,7 +117,7 @@ public class PantallaCargaDatos extends JFrame {
 				String alergia= (String) Alergia.getSelectedItem();
 				String atencionEspecial=(String) AtencionEspecial.getSelectedItem();
 				
-				//control.guardar(nombre,raza,color,nombreDueño,alergia,atencionEspecial,celDueño,observaciones);
+				control.guardar(nombre,raza,color,nombreDueño,alergia,atencionEspecial,celDueño,observaciones);
 				
 			}
 		});

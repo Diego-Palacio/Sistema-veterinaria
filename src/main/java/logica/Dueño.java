@@ -12,16 +12,21 @@ public class Dueño {
 	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	private int id_dueño;
 	private String nombre;
-	private int celular_dueño;
+	private String celular_dueño;
 		
 	
-	public Dueño(int id_dueño, String nombre, int celular_dueño) {
+	public Dueño(int id_dueño, String nombre, String celular_dueño) {
 		this.id_dueño = id_dueño;
 		this.nombre = nombre;
 		this.celular_dueño = celular_dueño;
 	}
 	
 	
+	public Dueño() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public int getId_dueño() {
 		return id_dueño;
 	}
@@ -34,11 +39,11 @@ public class Dueño {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getCelular_dueño() {
+	public String getCelular_dueño() {
 		return celular_dueño;
 	}
-	public void setCelular_dueño(int celular_dueño) {
-		this.celular_dueño = celular_dueño;
+	public void setCelular_dueño(String celDueño) {
+		this.celular_dueño = celDueño;
 	}
 	
 }

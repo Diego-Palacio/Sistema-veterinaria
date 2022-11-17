@@ -37,6 +37,21 @@ public class Mascota {
 	}
 	
 	
+	public Mascota() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Dueño getUnDueño() {
+		return unDueño;
+	}
+
+
+	public void setUnDueño(Dueño unDueño) {
+		this.unDueño = unDueño;
+	}
+
+
 	public String getNombre_perro() {
 		return nombre_perro;
 	}
