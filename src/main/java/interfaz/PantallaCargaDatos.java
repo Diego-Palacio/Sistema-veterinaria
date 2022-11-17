@@ -4,10 +4,13 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
+import logica.Controladora;
+
 import java.awt.*;
 
 public class PantallaCargaDatos extends JFrame {
 
+	
 	
 	private JPanel contentPane;
 	private JTextField NumCliente;
@@ -17,11 +20,14 @@ public class PantallaCargaDatos extends JFrame {
 	private JTextField NombreDueño;
 	private JTextField CelDueño;
 
+	// importo clase controladora ubicada en package logica
+	private Controladora control= new Controladora();
 	
 	/**
 	 * Create the frame.
 	 */
 	public PantallaCargaDatos() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 624);
 		contentPane = new JPanel();
@@ -96,6 +102,27 @@ public class PantallaCargaDatos extends JFrame {
 		contentPane.add(Limpiar);
 		
 		JButton Guardar = new JButton("Guardar");
+		
+		
+		Guardar.addActionListener(new ActionListener() {
+			//Evento que sucede al apretar boton "Limpiar"-- Borraremos todos los datos ingresados.
+			public void actionPerformed(ActionEvent e) {
+				//NumCliente.getText();
+				String nombre=Nombre.getText();
+				String raza=Raza.getText();
+				String color=Color.getText();
+				String nombreDueño=NombreDueño.getText();
+				String celDueño=CelDueño.getText();
+				String observaciones=Observaciones.getText();
+				String alergia= (String) Alergia.getSelectedItem();
+				String atencionEspecial=(String) AtencionEspecial.getSelectedItem();
+				
+				//control.guardar(nombre,raza,color,nombreDueño,alergia,atencionEspecial,celDueño,observaciones);
+				
+			}
+		});
+		
+		
 		Guardar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		Guardar.setBounds(389, 519, 126, 43);
 		contentPane.add(Guardar);
